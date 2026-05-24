@@ -1,0 +1,357 @@
+{
+  "inputs": {
+    "messages": [
+      {
+        "additional_kwargs": {},
+        "content": "what is the weather in sf? List it and then Triple it ",
+        "id": "c42d2da6-291a-4102-83ac-7960878d145f",
+        "response_metadata": {},
+        "type": "human"
+      }
+    ]
+  },
+  "outputs": {
+    "messages": [
+      {
+        "additional_kwargs": {},
+        "content": "what is the weather in sf? List it and then Triple it ",
+        "id": "c42d2da6-291a-4102-83ac-7960878d145f",
+        "response_metadata": {},
+        "type": "human"
+      },
+      {
+        "additional_kwargs": {
+          "refusal": null
+        },
+        "content": "",
+        "id": "lc_run--019e5c2b-35f6-72d3-855f-d3d293150ea3-0",
+        "invalid_tool_calls": [],
+        "response_metadata": {
+          "finish_reason": "tool_calls",
+          "id": "chatcmpl-DjBsbZIgmEzS8qxek8bI9hKMX4vl2",
+          "logprobs": null,
+          "model_name": "gpt-4o-mini-2024-07-18",
+          "model_provider": "openai",
+          "service_tier": "default",
+          "system_fingerprint": "fp_0cab4b58ee",
+          "token_usage": {
+            "completion_tokens": 20,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens": 1252,
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cached_tokens": 0
+            },
+            "total_tokens": 1272
+          }
+        },
+        "tool_calls": [
+          {
+            "args": {
+              "query": "current weather in San Francisco"
+            },
+            "id": "call_WKFf9wBlmJxEy5LUbVkzd6V4",
+            "name": "tavily_search",
+            "type": "tool_call"
+          }
+        ],
+        "type": "ai",
+        "usage_metadata": {
+          "input_token_details": {
+            "audio": 0,
+            "cache_read": 0
+          },
+          "input_tokens": 1252,
+          "output_token_details": {
+            "audio": 0,
+            "reasoning": 0
+          },
+          "output_tokens": 20,
+          "total_tokens": 1272
+        }
+      },
+      {
+        "additional_kwargs": {},
+        "content": "{\"query\": \"current weather in San Francisco\", \"follow_up_questions\": null, \"answer\": null, \"images\": [], \"results\": [{\"title\": \"Weather in San Francisco\", \"url\": \"https://www.weatherapi.com/\", \"content\": \"{'location': {'name': 'San Francisco', 'region': 'California', 'country': 'United States of America', 'lat': 37.775, 'lon': -122.4183, 'tz_id': 'America/Los_Angeles', 'localtime_epoch': 1779662643, 'localtime': '2026-05-24 15:44'}, 'current': {'last_updated_epoch': 1779661800, 'last_updated': '2026-05-24 15:30', 'temp_c': 19.4, 'temp_f': 66.9, 'is_day': 1, 'condition': {'text': 'Sunny', 'icon': '//cdn.weatherapi.com/weather/64x64/day/113.png', 'code': 1000}, 'wind_mph': 14.1, 'wind_kph': 22.7, 'wind_degree': 252, 'wind_dir': 'WSW', 'pressure_mb': 1017.0, 'pressure_in': 30.02, 'precip_mm': 0.0, 'precip_in': 0.0, 'humidity': 57, 'cloud': 25, 'feelslike_c': 19.4, 'feelslike_f': 66.9, 'windchill_c': 17.2, 'windchill_f': 62.9, 'heatindex_c': 17.2, 'heatindex_f': 62.9, 'dewpoint_c': 12.9, 'dewpoint_f': 55.3, 'vis_km': 16.0, 'vis_miles': 9.0, 'uv': 6.5, 'gust_mph': 16.4, 'gust_kph': 26.4, 'will_it_rain': 0, 'chance_of_rain': 0, 'will_it_snow': 0, 'chance_of_snow': 0}}\", \"score\": 0.9999447, \"raw_content\": null}], \"response_time\": 1.28, \"request_id\": \"fd3b02a9-ff4c-4488-953c-0c71b776a7ec\"}",
+        "id": "abd0c98c-80d6-4902-8410-4baf26964e72",
+        "name": "tavily_search",
+        "response_metadata": {},
+        "status": "success",
+        "tool_call_id": "call_WKFf9wBlmJxEy5LUbVkzd6V4",
+        "type": "tool"
+      },
+      {
+        "additional_kwargs": {
+          "refusal": null
+        },
+        "content": "",
+        "id": "lc_run--019e5c2b-4400-7c30-bf05-4eb33534ac42-0",
+        "invalid_tool_calls": [],
+        "response_metadata": {
+          "finish_reason": "tool_calls",
+          "id": "chatcmpl-DjBsopHbsX9mEBCUCfitvxp7AyDHY",
+          "logprobs": null,
+          "model_name": "gpt-4o-mini-2024-07-18",
+          "model_provider": "openai",
+          "service_tier": "default",
+          "system_fingerprint": "fp_0cab4b58ee",
+          "token_usage": {
+            "completion_tokens": 16,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens": 1815,
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cached_tokens": 1152
+            },
+            "total_tokens": 1831
+          }
+        },
+        "tool_calls": [
+          {
+            "args": {
+              "num": 19.4
+            },
+            "id": "call_fRogqaVbDp262guXeFU0J39X",
+            "name": "triple",
+            "type": "tool_call"
+          }
+        ],
+        "type": "ai",
+        "usage_metadata": {
+          "input_token_details": {
+            "audio": 0,
+            "cache_read": 1152
+          },
+          "input_tokens": 1815,
+          "output_token_details": {
+            "audio": 0,
+            "reasoning": 0
+          },
+          "output_tokens": 16,
+          "total_tokens": 1831
+        }
+      },
+      {
+        "additional_kwargs": {},
+        "content": "58.199999999999996",
+        "id": "0f5a5541-0a3f-49e6-823b-5b5cfbabfaa6",
+        "name": "triple",
+        "response_metadata": {},
+        "status": "success",
+        "tool_call_id": "call_fRogqaVbDp262guXeFU0J39X",
+        "type": "tool"
+      },
+      {
+        "additional_kwargs": {
+          "refusal": null
+        },
+        "content": "",
+        "id": "lc_run--019e5c2b-6e6c-7443-b610-5a4299056e63-0",
+        "invalid_tool_calls": [],
+        "response_metadata": {
+          "finish_reason": "tool_calls",
+          "id": "chatcmpl-DjBsqFW2Xn88L05BQ4t2xkJcV2sei",
+          "logprobs": null,
+          "model_name": "gpt-4o-mini-2024-07-18",
+          "model_provider": "openai",
+          "service_tier": "default",
+          "system_fingerprint": "fp_0cab4b58ee",
+          "token_usage": {
+            "completion_tokens": 16,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens": 1846,
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cached_tokens": 1792
+            },
+            "total_tokens": 1862
+          }
+        },
+        "tool_calls": [
+          {
+            "args": {
+              "num": 14.1
+            },
+            "id": "call_2Ry8AuK8GxhzYPzF8OiwaiGE",
+            "name": "triple",
+            "type": "tool_call"
+          }
+        ],
+        "type": "ai",
+        "usage_metadata": {
+          "input_token_details": {
+            "audio": 0,
+            "cache_read": 1792
+          },
+          "input_tokens": 1846,
+          "output_token_details": {
+            "audio": 0,
+            "reasoning": 0
+          },
+          "output_tokens": 16,
+          "total_tokens": 1862
+        }
+      },
+      {
+        "additional_kwargs": {},
+        "content": "42.3",
+        "id": "5c9a707c-3ad9-4432-b4f1-5022f74ddfd8",
+        "name": "triple",
+        "response_metadata": {},
+        "status": "success",
+        "tool_call_id": "call_2Ry8AuK8GxhzYPzF8OiwaiGE",
+        "type": "tool"
+      },
+      {
+        "additional_kwargs": {
+          "refusal": null
+        },
+        "content": "",
+        "id": "lc_run--019e5c2b-7733-72e1-adc5-c8b9becc01d1-0",
+        "invalid_tool_calls": [],
+        "response_metadata": {
+          "finish_reason": "tool_calls",
+          "id": "chatcmpl-DjBsr6JKlH0cf6iIYU9iw1Slm6ApS",
+          "logprobs": null,
+          "model_name": "gpt-4o-mini-2024-07-18",
+          "model_provider": "openai",
+          "service_tier": "default",
+          "system_fingerprint": "fp_0cab4b58ee",
+          "token_usage": {
+            "completion_tokens": 14,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens": 1873,
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cached_tokens": 1792
+            },
+            "total_tokens": 1887
+          }
+        },
+        "tool_calls": [
+          {
+            "args": {
+              "num": 57
+            },
+            "id": "call_UvpryX4Jt5Gl0UWcJ2xiqzqA",
+            "name": "triple",
+            "type": "tool_call"
+          }
+        ],
+        "type": "ai",
+        "usage_metadata": {
+          "input_token_details": {
+            "audio": 0,
+            "cache_read": 1792
+          },
+          "input_tokens": 1873,
+          "output_token_details": {
+            "audio": 0,
+            "reasoning": 0
+          },
+          "output_tokens": 14,
+          "total_tokens": 1887
+        }
+      },
+      {
+        "additional_kwargs": {},
+        "content": "171.0",
+        "id": "335d9f02-bfb1-4212-899f-d8ad2d6a4bb8",
+        "name": "triple",
+        "response_metadata": {},
+        "status": "success",
+        "tool_call_id": "call_UvpryX4Jt5Gl0UWcJ2xiqzqA",
+        "type": "tool"
+      },
+      {
+        "additional_kwargs": {
+          "refusal": null
+        },
+        "content": "The current weather in San Francisco is as follows:\n\n- **Temperature:** 19.4°C (66.9°F)\n- **Condition:** Sunny\n- **Wind Speed:** 14.1 mph\n- **Humidity:** 57%\n\nTriple values of the weather data:\n- **Tripled Temperature:** 58.20°C\n- **Tripled Wind Speed:** 42.3 mph\n- **Tripled Humidity:** 171% \n\nPlease note that humidity over 100% is not typically meaningful in practical terms, but the calculated value is listed for completeness.",
+        "id": "lc_run--019e5c2b-79e1-7e81-9238-7b86e40527e8-0",
+        "invalid_tool_calls": [],
+        "response_metadata": {
+          "finish_reason": "stop",
+          "id": "chatcmpl-DjBsrEWwfa8S18HNXvAowKv4U0ddJ",
+          "logprobs": null,
+          "model_name": "gpt-4o-mini-2024-07-18",
+          "model_provider": "openai",
+          "service_tier": "default",
+          "system_fingerprint": "fp_0cab4b58ee",
+          "token_usage": {
+            "completion_tokens": 118,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 0,
+              "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens": 1898,
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cached_tokens": 1792
+            },
+            "total_tokens": 2016
+          }
+        },
+        "tool_calls": [],
+        "type": "ai",
+        "usage_metadata": {
+          "input_token_details": {
+            "audio": 0,
+            "cache_read": 1792
+          },
+          "input_tokens": 1898,
+          "output_token_details": {
+            "audio": 0,
+            "reasoning": 0
+          },
+          "output_tokens": 118,
+          "total_tokens": 2016
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+    "LANGSMITH_PROJECT": "langgraph-react-agent",
+    "LANGSMITH_TRACING": "true",
+    "ls_integration": "langgraph",
+    "ls_run_depth": 0,
+    "revision_id": "03f7369-dirty"
+  },
+  "langsmith": {
+    "organization": {
+      "name": "Personal",
+      "id": "66cfc4d6-b28d-4699-96a4-1f669aba8567"
+    },
+    "workspace": {
+      "name": "Workspace 1",
+      "id": "2cf79cd4-2f7a-4889-8ae2-c902a2fbe8cc"
+    },
+    "tracing_project": {
+      "id": "ae672d86-cef8-4619-867e-e2c64278bb54",
+      "name": "langgraph-react-agent"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "langgraph-react"
+version = "0.1.0"
+description = ""
+authors = ["Abhi Pad <abhishekhp@gmail.com>"]
+readme = "README.md"
+package-mode = false  # <--- ADD THIS LINE
+
+[tool.poetry.dependencies]
+python = "^3.10"
+langchain = "*"
+langgraph = "*"
+langchain-openai = "*"
+langchainhub = "*"
+black = "*"
+isort = "*"
+python-dotenv = "*"
+langchain-tavily = "*"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
