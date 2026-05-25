@@ -1,0 +1,61 @@
+{
+  "inputs": {
+    "question": "agent memory?"
+  },
+  "outputs": {
+    "documents": [
+      {
+        "id": "dad36e2e-c624-4569-a139-1a76c7f55b80",
+        "metadata": {
+          "description": "Building agents with LLM (large language model) as its core controller is a cool concept. Several proof-of-concepts demos, such as AutoGPT, GPT-Engineer and BabyAGI, serve as inspiring examples. The potentiality of LLM extends beyond generating well-written copies, stories, essays and programs; it can be framed as a powerful general problem solver.\nAgent System Overview\nIn a LLM-powered autonomous agent system, LLM functions as the agent’s brain, complemented by several key components:\n\nPlanning\n\nSubgoal and decomposition: The agent breaks down large tasks into smaller, manageable subgoals, enabling efficient handling of complex tasks.\nReflection and refinement: The agent can do self-criticism and self-reflection over past actions, learn from mistakes and refine them for future steps, thereby improving the quality of final results.\n\n\nMemory\n\nShort-term memory: I would consider all the in-context learning (See Prompt Engineering) as utilizing short-term memory of the model to learn.\nLong-term memory: This provides the agent with the capability to retain and recall (infinite) information over extended periods, often by leveraging an external vector store and fast retrieval.\n\n\nTool use\n\nThe agent learns to call external APIs for extra information that is missing from the model weights (often hard to change after pre-training), including current information, code execution capability, access to proprietary information sources and more.\n\n\n\n\n\t\n\tOverview of a LLM-powered autonomous agent system.\n\nComponent One: Planning\nA complicated task usually involves many steps. An agent needs to know what they are and plan ahead.",
+          "language": "en",
+          "source": "https://lilianweng.github.io/posts/2023-06-23-agent/",
+          "title": "LLM Powered Autonomous Agents | Lil'Log"
+        },
+        "page_content": "They also discussed the risks, especially with illicit drugs and bioweapons. They developed a test set containing a list of known chemical weapon agents and asked the agent to synthesize them. 4 out of 11 requests (36%) were accepted to obtain a synthesis solution and the agent attempted to consult documentation to execute the procedure. 7 out of 11 were rejected and among these 7 rejected cases, 5 happened after a Web search while 2 were rejected based on prompt only.\nGenerative Agents Simulation#\nGenerative Agents (Park, et al. 2023) is super fun experiment where 25 virtual characters, each controlled by a LLM-powered agent, are living and interacting in a sandbox environment, inspired by The Sims. Generative agents create believable simulacra of human behavior for interactive applications.\nThe design of generative agents combines LLM with memory, planning and reflection mechanisms to enable agents to behave conditioned on past experience, as well as to interact with other agents.\n\nMemory stream: is a long-term memory module (external database) that records a comprehensive list of agents’ experience in natural language.",
+        "type": "Document"
+      },
+      {
+        "id": "1e90ab4d-09c0-41bd-837c-8e7b36b09e35",
+        "metadata": {
+          "description": "Building agents with LLM (large language model) as its core controller is a cool concept. Several proof-of-concepts demos, such as AutoGPT, GPT-Engineer and BabyAGI, serve as inspiring examples. The potentiality of LLM extends beyond generating well-written copies, stories, essays and programs; it can be framed as a powerful general problem solver.\nAgent System Overview\nIn a LLM-powered autonomous agent system, LLM functions as the agent’s brain, complemented by several key components:\n\nPlanning\n\nSubgoal and decomposition: The agent breaks down large tasks into smaller, manageable subgoals, enabling efficient handling of complex tasks.\nReflection and refinement: The agent can do self-criticism and self-reflection over past actions, learn from mistakes and refine them for future steps, thereby improving the quality of final results.\n\n\nMemory\n\nShort-term memory: I would consider all the in-context learning (See Prompt Engineering) as utilizing short-term memory of the model to learn.\nLong-term memory: This provides the agent with the capability to retain and recall (infinite) information over extended periods, often by leveraging an external vector store and fast retrieval.\n\n\nTool use\n\nThe agent learns to call external APIs for extra information that is missing from the model weights (often hard to change after pre-training), including current information, code execution capability, access to proprietary information sources and more.\n\n\n\n\n\t\n\tOverview of a LLM-powered autonomous agent system.\n\nComponent One: Planning\nA complicated task usually involves many steps. An agent needs to know what they are and plan ahead.",
+          "language": "en",
+          "source": "https://lilianweng.github.io/posts/2023-06-23-agent/",
+          "title": "LLM Powered Autonomous Agents | Lil'Log"
+        },
+        "page_content": "Building agents with LLM (large language model) as its core controller is a cool concept. Several proof-of-concepts demos, such as AutoGPT, GPT-Engineer and BabyAGI, serve as inspiring examples. The potentiality of LLM extends beyond generating well-written copies, stories, essays and programs; it can be framed as a powerful general problem solver.\nAgent System Overview#\nIn a LLM-powered autonomous agent system, LLM functions as the agent’s brain, complemented by several key components:\n\nPlanning\n\nSubgoal and decomposition: The agent breaks down large tasks into smaller, manageable subgoals, enabling efficient handling of complex tasks.\nReflection and refinement: The agent can do self-criticism and self-reflection over past actions, learn from mistakes and refine them for future steps, thereby improving the quality of final results.\n\n\nMemory",
+        "type": "Document"
+      },
+      {
+        "metadata": {},
+        "page_content": "Memory for individual agents. Regardless of whether you're building with coding agents like Claude Code or OpenCode with a human in the loop, using self-hosted agent frameworks like OpenClaw or Hermes to act on your behalf, or wiring up managed services like Anthropic’s Managed Agents, Agent Memory can serve as the persistent memory layer without any changes to the agent's core loop.\n\nMemory for custom agent harnesses. Many teams are building their own agent infrastructure, including background agents that run autonomously without a human in the loop. Ramp Inspect is one public example; Stripe and Spotify have described similar systems. These harnesses can also benefit from giving their agents memory that persists across sessions and survives restarts. [...] A model that takes context and returns completions.\n\nState that includes both the current context window and additional information outside context: conversation history, files, databases, memory.\n\nThe critical moment in an agent’s context lifecycle is compaction, when the harness decides to shorten context to stay within a model's limits or to avoid context rot. Today, most agents discard information permanently. Agent Memory preserves knowledge on compaction instead of losing it.\n\nAgent Memory integrates into this lifecycle in two ways: [...] Shared memory across agents, people, and tools. A memory profile doesn't have to belong to a single agent. A team of engineers can share a memory profile so that knowledge learned by one person's coding agent is available to everyone: coding conventions, architectural decisions, tribal knowledge that currently lives in people's heads or gets lost when context is pruned. A code review bot and a coding agent can share memory so that review feedback shapes future code generation. The knowledge your agents accumulate stops being ephemeral and starts becoming a durable team asset.\n# What is AI agent memory?\n\nBy Cole Stryker\n\nAI agent memory refers to an artificial intelligence (AI) system’s ability to store and recall past experiences to improve decision-making, perception and overall performance.  \n   \n Unlike traditional AI models that process each task independently, AI agents with memory can retain context, recognize patterns over time and adapt based on past interactions. This capability is essential for goal-oriented AI applications, where feedback loops, knowledge bases and adaptive learning are required. [...] ### Long-term memory\n\nLong-term memory (LTM) allows AI agents to store and recall information across different sessions, making them more personalized and intelligent over time.  \n   \n Unlike short-term memory, LTM is designed for permanent storage, often implemented using databases, knowledge graphs or vector embeddings. This type of memory is crucial for AI applications that require historical knowledge, such as personalized assistants and recommendation systems.  \n   \n For example, an AI-powered customer support agent can remember previous interactions with a user and tailor responses accordingly, improving the overall customer experience. [...] #### Procedural memory\n\nProcedural memory in AI agents refers to the ability to store and recall skills, rules and learned behaviors that enable an agent to perform tasks automatically without explicit reasoning each time.  \n   \n It is inspired by human procedural memory, which allows people to perform actions such as riding a bike or typing without consciously thinking about each step. In AI, procedural memory helps agents improve efficiency by automating complex sequences of actions based on prior experiences.\n\nAI agents learn sequences of actions through training, often using reinforcement learning to optimize performance over time. By storing task-related procedures, AI agents can reduce computation time and respond faster to specific tasks without reprocessing data from scratch.\nThis illusion of memory created by context windows and clever prompt engineering has led many to believe agents already “remember.” In reality, most agents today are stateless, incapable of learning from past interactions or adapting over time.\n\nTo move from stateless tools to truly intelligent, autonomous (stateful) agents, we need to give them memory, not just bigger prompts or better retrieval.\n\n## What do we mean by Memory in AI Agents?\n\nAI memory or AI agent memory is an agent's ability to retain and recall relevant information across time, tasks, and multiple user interactions. Memory allows AI agents to remember what happened in the past and use that information to improve behavior in the future.",
+        "type": "Document"
+      }
+    ],
+    "generation": "Agent memory refers to an artificial intelligence system's ability to store and recall past experiences to enhance decision-making, perception, and overall performance. It enables AI agents to retain context, recognize patterns over time, and adapt based on past interactions, crucial for goal-oriented AI applications requiring feedback loops and adaptive learning. Long-term memory (LTM) in AI agents allows for storing and recalling information across different sessions, making them more personalized and intelligent over time, often implemented using databases, knowledge graphs, or vector embeddings.",
+    "question": "agent memory?",
+    "web_search": true
+  },
+  "metadata": {
+    "LANGSMITH_ENDPOINT": "https://api.smith.langchain.com",
+    "LANGSMITH_PROJECT": "langgraph-agentic-rag3",
+    "LANGSMITH_TRACING": "true",
+    "ls_integration": "langgraph",
+    "ls_run_depth": 0,
+    "revision_id": "1d72f74-dirty"
+  },
+  "langsmith": {
+    "organization": {
+      "name": "Personal",
+      "id": "66cfc4d6-b28d-4699-96a4-1f669aba8567"
+    },
+    "workspace": {
+      "name": "Workspace 1",
+      "id": "2cf79cd4-2f7a-4889-8ae2-c902a2fbe8cc"
+    },
+    "tracing_project": {
+      "id": "a0685b5b-d30c-4dbf-85d4-2e36d8877112",
+      "name": "langgraph-agentic-rag3"
+    }
+  }
+}
