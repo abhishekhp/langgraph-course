@@ -1,110 +1,107 @@
-# LangGraph🦜🕸️ – Develop LLM-Powered AI Agents
+# 🦜🪞 LangGraph Reflection Agent
 
+This repository contains a reflection-style agent architecture built with LangGraph that improves output quality through self-critique and refinement.
 
-![Logo](https://github.com/emarco177/langgraph-course/blob/main/banner.png)
+## ✨ Overview
 
-[![Udemy](https://img.shields.io/badge/Udemy-Course-EC5252?style=for-the-badge&logo=udemy&logoColor=white)](https://www.udemy.com/course/langgraph/?couponCode=APRIL-2026) 
-[![Rating](https://img.shields.io/badge/Rating-4.7/5-brightgreen?style=for-the-badge)](https://www.udemy.com/course/langgraph/) 
-[![Students](https://img.shields.io/badge/Students-13K+-blue?style=for-the-badge)](https://www.udemy.com/course/langgraph/?couponCode=APRIL-2026)
-[![Twitter](https://img.shields.io/twitter/follow/EdenEmarco177?label=Follow&style=social)](https://twitter.com/EdenEmarco177)
+The reflection agent uses a feedback loop between a generation component and a reflection component to iteratively improve responses to user queries. In this implementation, we've created a Twitter assistant that enhances tweets through multiple rounds of critique and revision.
 
-> **Build production-grade AI agents—fast.** This repository is the hands-on companion to my Udemy bestseller. Every branch is a *project*, every commit is a *lesson*. Clone it, code along, and ship your own LangGraph agents.
+```mermaid
+graph LR;
+    __start__([__start__]):::first
+    generate(generate)
+    reflect(reflect)
+    __end__([__end__]):::last
+    __start__ --> generate;
+    generate --> reflect;
+    reflect -.-> generate;
+    generate -.-> __end__;
+    classDef default fill:#f2f0ff,line-height:1.2
+    classDef first fill-opacity:0
+    classDef last fill:#bfb6fc
+```
+[![udemy](https://img.shields.io/badge/LangGraph🦜🔗%20Udemy%20Course-%20Coupon%20%2412.99-brightgreen)](https://www.udemy.com/course/langgraph/?couponCode=APRIL-2025)
 
----
+## 🔄 How It Works
 
-## 🚀  What You'll Build
+1. **Generate**: The initial component creates a response (in our case, a tweet) based on the user's input
+2. **Reflect**: The reflection component evaluates the generated content and provides specific feedback for improvement
+3. **Loop**: The generation component refines its output based on the reflection's feedback
+4. **Termination**: The process ends after a predetermined number of iterations (currently set to 6)
 
-- **Agentic RAG** – Retrieval-Augmented Generation with self-correction & adaptive routing  
-- **ReAct Agent** – Reasoning + Acting loop implemented in LangGraph  
-- **Reflection & Reflexion Agents** – Agents that critique and improve themselves  
-- **Multi-Step Graphs** – Complex flows with conditionals, parallelism, and web-search tools
+This approach creates a self-improving system that produces higher quality outputs through deliberate reflection.
 
----
-
-## 🗂️  Repository Map
-
-| Branch | Project Snapshot | Live Code |
-|--------|------------------|-----------|
-| **project/agentic-rag** | Advanced RAG pipeline with grading, web-search & adaptive routing | [link](https://github.com/emarco177/langgaph-course/tree/project/agentic-rag) |
-| **project/ReAct-agent** | Classic ReAct (Reason + Act) agent in LangGraph | [link](https://github.com/emarco177/langgaph-course/tree/project/ReAct-agent) |
-| **project/reflection** | Minimal reflection demo – the *why* before the *wow* | [link](https://github.com/emarco177/langgaph-course/tree/project/reflection) |
-| **project/reflection-agent** | Full reflection agent that revises its own output | [link](https://github.com/emarco177/langgaph-course/tree/project/reflection-agent) |
-| **project/reflexion-agent** | Reflexion agent that learns from past runs | [link](https://github.com/emarco177/langgaph-course/tree/project/reflexion-agent) |
-
-> ✨ **Tip:** Checkout a branch, then use `git log --oneline` to watch the lessons unfold commit-by-commit.
-
----
-
-## 📚  Lesson-By-Lesson: *Agentic RAG* Branch
-
-| # | Commit | Lesson Title | Key Skill |
-|---|--------|--------------|-----------|
-| 1 | `5b2b18e` | Project Kick-Off | Repo & env setup |
-| 2 | `2693185` | Folder Structure 101 | Clean project scaffolding |
-| 3 | `513e3cf` | Ingestion Pipeline | Load & embed data |
-| 4 | `03f79ae` | Graph State | Passing memory between nodes |
-| 5 | `c2d71c7` | Retrieve Node | Context fetching with LangGraph |
-| 6 | `9107e7a` | Grade Docs Node | Structured relevance filtering |
-| 7 | `6d4fdc4` | Web Search Node | Tavily API integration |
-| 8 | `bc57b63` | Generation Node | Prompting & LLM calls |
-| 9 | `a450f9b` | Wiring the Graph | Fan-in, fan-out, conditionals |
-| 10 | `5400fb7` | Self-RAG | Let the LLM critique itself |
-| 11 | `034e53f` | Adaptive Router | Dynamic tool selection |
-
-Feel free to cherry-pick commits or rewind with `git checkout <hash>` to experiment.
-
----
-
-## ⚡  Quick Start
+## 💻 Installation
 
 ```bash
-# 1. Clone & enter
-$ git clone https://github.com/emarco177/langgaph-course.git
-$ cd langgaph-course
+# Clone the repository
+git clone https://github.com/emarco177/langgraph-course.git
+cd langgraph-course
+git checkout project/reflection-agent
 
-# 2. Choose a project branch
-$ git checkout project/agentic-rag  # for example
-
-# 3. Install deps (Poetry)
-$ poetry install
-
-# 4. Run
-$ poetry run python main.py
+# Install dependencies using Poetry
+poetry install
 ```
 
-Create a `.env` file:
+## 📁 Project Structure
 
-```bash
-OPENAI_API_KEY=...
-TAVILY_API_KEY=...          # optional – for web-search lessons
-LANGCHAIN_API_KEY=...       # optional – for LangSmith tracing
-LANGCHAIN_TRACING_V2=true   # optional
-PYTHONPATH=$(pwd)
+```
+reflection-agent/
+├── chains.py         # Defines the prompt chains for generation and reflection
+├── main.py           # Implements the core LangGraph structure
+├── pyproject.toml    # Project dependencies and configuration
+└── README.md         # This documentation
 ```
 
----
+## 🛠️ Implementation Details
 
-## 💼  Level-Up Your Career: LangJobs🦜
+### Main Components
 
-Looking for your next role building Agents, RAG apps, or LangGraph integrations? Check the **[LangJobs.dev](https://langjobs.dev/)** board—built for the 150 000-strong AI-Engineering community.  
-Post a job or explore openings that use the exact tech stack you're mastering here.
+The reflection agent is built with two primary nodes:
 
----
+1. **Generation Node** (in `chains.py`):
+   - Uses a specialized prompt for creating Twitter content
+   - Responds to critique by refining previously generated content
 
-## 🤝  Join the Community
+2. **Reflection Node** (in `chains.py`):
+   - Critiques the generated content against quality criteria
+   - Provides specific recommendations for improvement
 
-- 💬  **Discord** – Private server for Q&A and project feedback  
-- 🐙  **GitHub Issues** – Bugs, ideas, PRs welcome!  
-- 🛠️  **Bonus Repos** – Extra templates & utilities for course alumni
+## 🔍 Example Usage
 
-> All future updates are free. Your one-time enrollment grows with the ecosystem.
+```python
+from langchain_core.messages import HumanMessage
+from main import graph
 
-Enjoy the course & happy coding! 🎉
+# Create input prompt
+input_tweet = HumanMessage(content="""Make this tweet better:
+@LangChainAI — newly Tool Calling feature is seriously underrated.
+After a long wait, it's here- making the implementation of agents across different models with function calling - super easy.
+Made a video covering their newest blog post""")
 
----
+# Run the reflection agent
+improved_tweet = graph.invoke(input_tweet)
+print(improved_tweet)
+```
 
-## 🙏  Acknowledgements
+## 📚 Video Lessons
 
-Big thanks to the **LangChain / LangGraph** team and their excellent [documentation and tutorials](https://langchain-ai.github.io/langgraph/tutorials/introduction/) that make this course possible.
+This project is built incrementally across multiple video lessons. Each commit represents a specific lesson in the series:
 
----
+| Lesson | Commit | Description |
+|--------|--------|-------------|
+| 1 | [adbee18](https://github.com/emarco177/langgaph-course/commit/adbee18) | **Getting Started**: Initial setup for the reflection agent |
+| 2 | [aab1105](https://github.com/emarco177/langgaph-course/commit/aab1105) | **Project Structure**: Adding core files and dependencies with Poetry |
+| 3 | [d2f15d2](https://github.com/emarco177/langgaph-course/commit/d2f15d2) | **Chain Implementation**: Building Twitter influencer prompts and generation logic |
+| 4 | [ed491a6](https://github.com/emarco177/langgaph-course/commit/ed491a6) | **Graph Implementation**: Connecting nodes with conditional logic for feedback loops |
+
+Each lesson builds on the previous one, demonstrating how to incrementally build a reflection agent architecture using LangGraph.
+
+## 👏 Acknowledgment
+
+This reflection agent implementation is based on the concepts and patterns described in the LangGraph documentation. For more information about reflection agents, visit the [LangGraph Reflection Tutorial](https://langchain-ai.github.io/langgraph/tutorials/reflection/reflection/).
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://www.udemy.com/course/langgraph/?referralCode=FEA50E8CBA24ECD48212)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/eden-marco/)
+[![Twitter Follow](https://img.shields.io/twitter/follow/EdenEmarco177?style=social)](https://twitter.com/EdenEmarco177)
