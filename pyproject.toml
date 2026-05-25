@@ -15,6 +15,7 @@ langchain = "*"
 langchain-openai = "*"
 langgraph = "*"
 grandalf = "^0.8"
+langchain-tavily = "^0.2.18"
 
 
 [build-system]
