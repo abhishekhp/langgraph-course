@@ -9,4 +9,8 @@ def retrieve(state: GraphState) -> Dict[str, Any]:
     question = state["question"]
 
     documents = retriever.invoke(question)
-    return {"documents": documents, "question": question}
+
+    # return {"documents": documents, "question": question}
+
+    #  New, correct line: Only return the retrieved documents list
+    return {"documents": documents}
